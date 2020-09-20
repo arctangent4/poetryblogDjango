@@ -1,0 +1,38 @@
+{%extends 'base.html'%}
+{% load static%}
+{%block title%} 
+About
+
+
+{%endblock%}
+
+{% block content%}
+<head>
+<link rel="stylesheet" href="{%static 'theblog/css/parallaxstyles.css' %}">
+
+    
+</head>
+<h1 class="text-center">About</h1>
+
+<body>
+   <div class="parallax-container" >
+       <p>
+We are an up and coming online literary journal that focuses on publishing poetry and fiction. Our niche is combining poetry with beautiful web design, in order to frame poetry in a better. Our website is periodically undergoing construction, so please bear with us. 
+
+       </p>
+
+      <div class="parallax" data-parallax="scroll" data-z-index="1" data-speed=".2" data-image-src="{%static 'theblog/img/fernbackground.jpg'%}">
+       <p class="info"></p>
+
+       </div>
+       <p>
+ 
+       </p>
+
+       </div>
+    
+
+
+    
+    
+{%endblock%}

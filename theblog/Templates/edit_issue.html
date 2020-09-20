@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+{%block title%} 
+Edit An Issue
+
+{%endblock%}
+{% block content%}
+
+{% if user.is_authenticated %}      
+<h1>Edit An Issue</h1>
+<br/>
+<br/>
+<div class="form-group">
+<form method="POST">
+    {%csrf_token%}
+    {{ form.media }}
+    {{ form.as_p}}
+    <button class="btn btn-secondary">Edit Issue</button>
+
+
+</form>
+</div>
+{% else %}
+
+You need to be logged in an adminstrative account to edit issues.
+
+{% endif %}
+
+{%endblock%}

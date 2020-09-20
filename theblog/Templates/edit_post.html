@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+{%block title%} 
+Edit A Post
+
+{%endblock%}
+{% block content%}
+
+{% if user.is_authenticated %}      
+<h1>Edit Post</h1>
+<br/>
+<br/>
+<div class="form-group">
+<form method="POST">
+    {%csrf_token%}
+    {{ form.media }}
+    {{ form.as_p}}
+    <button class="btn btn-secondary">Edit Post</button>
+
+
+</form>
+</div>
+{% else %}
+
+You need to be logged in an adminstrative account to edit posts.
+
+{% endif %}
+
+{%endblock%}

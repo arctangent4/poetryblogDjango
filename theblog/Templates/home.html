@@ -1,0 +1,89 @@
+{%extends 'base.html'%}
+{%load static%}
+{% block content%}
+<head>
+
+<link rel="stylesheet" href="{%static 'theblog/css/parallaxstyles.css' %}">
+<style>
+    
+    .special-card {
+/* create a custom class so you 
+   do not run into specificity issues 
+   against bootstraps styles
+   which tends to work better than using !important 
+   (future you will thank you later)*/
+
+  background-color: rgba(245, 245, 245, 1);
+  opacity: .7;
+
+}
+    .cool-heading{
+
+        margin: 0;
+        padding: 0;
+        text-align:center;
+        font-size: 6em;
+        color: #fff;
+        text-transform: uppercase; 
+        text-shadow: 0 5px 10px rgba(0,0,0,1);
+        opacity: .9;  
+        
+    }
+    
+ .cool-button-heading{
+
+        margin: 0;
+        padding: 0;
+        text-align:center;
+        font-size: 6em;
+        color: #fff;
+        text-transform: uppercase; 
+        text-shadow: 0 5px 10px rgba(0,0,0,1);
+        opacity: .6;
+        
+        
+        
+        
+    }
+    
+    </style>
+</head>
+
+<!--{% for post in object_list %}
+<li><a href="{% url 'article-detail' post.pk %}">{{post.title}}</a> - 
+    {{ post.post_date}}
+    <small> 
+    {% if user.is_authenticated %}
+        
+    <a href="{% url 'edit_post' post.pk %}">Edit</a>/
+    <a href="{% url 'delete_post' post.pk %}">Delete</a>
+    {%endif%}
+    </small>
+    <br/> 
+{{post.body|slice:"100"|safe}}</li>
+adjust date for Colorado Time
+    
+{%endfor%}-->
+    
+    
+  <div style="width:100%;" class="parallax border" data-parallax="scroll" data-z-index="-1" data-speed=".2"    data-image-src="{%static 'theblog/img/ferntree.jpg'%}">
+
+
+    <h1 class="cool-heading">Evocative Poetry <br>&<br> Fiction</h1>
+
+
+
+
+
+        </div>
+ <div style="width:100%;" class="parallax border" data-parallax="scroll" data-z-index="-1" data-speed=".2"    data-image-src="{%static 'theblog/img/fernspiral.jpg'%}">
+
+
+   <a href="{% url 'latest-issue' %}" style="margin:auto; padding:0;" class="btn btn-green btn-outline-black cool-button-heading d-flex justify-content-center">Latest Issue</a> 
+
+
+
+
+
+        </div>
+{%endblock%}

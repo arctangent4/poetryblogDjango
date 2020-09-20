@@ -1,0 +1,35 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{% block content%}
+<h1 class="text-center">{{issue.name}}</h1>
+
+<div>
+<div style="margin:auto;">
+<ul class="list-unstyled list-center">
+
+{%for post in posts%}
+    {%if post.issue_title == issue.name %}
+    <li><a href="{% url 'article-detail' post.pk%}">{{post.title}} </a>{{post.author}}</li>
+    {%else%}
+    
+    {%endif%}
+
+{%endfor%}
+    
+
+
+
+
+</ul>
+
+<a href="{% url 'issue' %}" class="btn btn-dark">Back</a>
+
+
+</div>
+</div>
+
+
+{%endblock%}
+
+<!--"{{post.issue_title}}" == "Issue 1—Fall 2020"%-->

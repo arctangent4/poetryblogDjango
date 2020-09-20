@@ -1,0 +1,60 @@
+{%extends 'base.html'%}
+{%load static%}
+{% block content%}
+<head>
+<link rel="stylesheet" href="{%static 'theblog/css/parallaxstyles.css' %}">
+<style>
+   .list-center {
+  display: table;
+  margin: 0 auto;
+} 
+    
+.display-4 a, .display-4 a:visited {
+    color: white!important;
+}
+
+.display-4 a:hover, .display-4 a:active {
+    color: white!important;
+}
+
+.border{
+     border-width: 100px;   
+    }
+.special-card
+    {
+        background-color: white;
+        opacity:1;
+    }
+
+    </style>
+
+</head>
+<h1 class="text-center">Issue Archives</h1>
+<div class="parallax-container">
+<ul class="list-unstyled list-center">
+{% for issue in object_list %}
+    <span>
+    <li class="display-4">
+    <a href="{%url 'issue-detail' issue.pk%}" style="a:active{color:red;}">
+        
+        <div style="width:100%;" class="parallax border" data-parallax="scroll" data-z-index="1" data-speed=".2"    data-image-src="{{issue.parallaximage.url}}">
+  
+       <div class="card-text special-card"><p class="info" style="color:{{issue.color}}">{{issue.name}}</p></div>
+
+        </div>
+        
+    
+    
+    
+    </a></li>
+    
+    </span>
+
+    <div style="height:50px;">
+            </div>  
+
+{%endfor%}
+</ul>
+    </div>
+<!--<img src="{% static 'theblog/img/fernbackground.jpg' %}">-->
+{%endblock%}

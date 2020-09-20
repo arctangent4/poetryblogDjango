@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+{%block title%} 
+Create a New Issue
+
+{%endblock%}
+{% block content%}
+
+{% if user.is_authenticated %}
+<h1>Create a New Issue</h1>
+<br/>
+<br/>
+<div class="form-group">
+<form method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+    {{ form.media}}
+    {{ form.as_p}}
+    <button class="btn btn-secondary">Create New Issue</button>
+
+
+</form>
+</div>
+{%else%}
+You need to be logged in an administrative account to add posts.
+
+{%endif%}
+
+
+
+
+
+{%endblock%}

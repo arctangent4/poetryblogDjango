@@ -1,0 +1,16 @@
+.parallax-container {
+    margin: 0 auto;
+    padding: 25px;
+
+}
+
+.parallax {
+    min-height: 500px;
+    background: transparent;
+}
+
+.info{
+    z-index: 2;
+    position: relative;
+    text-align: center;
+}
